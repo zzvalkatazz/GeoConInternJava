@@ -19,7 +19,7 @@ import org.testng.Assert;
 public class Contact_Us {
     private WebDriver driver;
 
-    @Before
+    @Before("@ContactUsPage")
     public void Setup(){
         System.setProperty("webdriver.chrome.driver" , System.getProperty("user.dir") + "/src/main/java/drivers/chromedriver.exe");
         ChromeOptions chromeOptions=new ChromeOptions();
@@ -28,7 +28,7 @@ public class Contact_Us {
         driver=new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
     }
-    @After
+    @After("@ContactUsPage")
     public void Teardown(){
         driver.quit();
     }
@@ -70,6 +70,24 @@ public class Contact_Us {
     public void i_should_receive_succseful_message() {
         WebElement contact_us_submission_message= driver.findElement(By.xpath("//div[@id='contact_reply']/h1[.='Thank You for your Message!']"));
         Assert.assertEquals(contact_us_submission_message.getText(),"Thank You for your Message!");
+    }
+
+
+    @When("I enter specific first name {}")
+    public void i_enter_specific_first_name(String specific_name) {
+        driver.findElement(By.xpath("//form[@id='contact_form']/input[@name='first_name']")).sendKeys(specific_name);
+    }
+    @When("I enter specific last name {}")
+    public void i_enter_specific_last_name(String specificLastName) {
+        driver.findElement(By.xpath("//form[@id='contact_form']/input[@name='last_name']")).sendKeys(specificLastName);
+    }
+    @When("I enter specific email address {}")
+    public void i_enter_specific_email_address(String specificEmail) {
+        driver.findElement(By.xpath("//form[@id='contact_form']/input[@name='email']")).sendKeys(specificEmail);
+    }
+    @When("I enter specific comment {string}")
+    public void i_enter_specific_comment(String specificComment) {
+        driver.findElement(By.xpath("//form[@id='contact_form']/textarea[@name='message']")).sendKeys(specificComment);
     }
 }
 
