@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-10-02T15:29:51 IDT" name="Suite" finished-at="2024-10-02T15:29:51 IDT" duration-ms="71">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.MainRunner@27ce24aa]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2024-10-02T15:29:51 IDT" name="Test" finished-at="2024-10-02T15:29:51 IDT" duration-ms="71">
+      <class name="runners.MainRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runners.MainRunner@27ce24aa]" started-at="2024-10-02T15:29:51 IDT" name="setUpClass" finished-at="2024-10-02T15:29:51 IDT" duration-ms="49" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@7d212b6]]>
+              </value>
+            </param>
+          </params>
+          <exception class="io.cucumber.core.exception.CucumberException">
+            <message>
+              <![CDATA[Failed to parse 'cucumber.filter.tags' with value '(@ ThirdButtonTag and (not @MaleTag))']]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.cucumber.core.exception.CucumberException: Failed to parse 'cucumber.filter.tags' with value '(@ ThirdButtonTag and (not @MaleTag))'
+at io.cucumber.core.options.CucumberPropertiesParser.parseAll(CucumberPropertiesParser.java:147)
+at io.cucumber.core.options.CucumberPropertiesParser.parse(CucumberPropertiesParser.java:132)
+at io.cucumber.core.options.CucumberPropertiesParser.parse(CucumberPropertiesParser.java:81)
+at io.cucumber.core.options.CucumberPropertiesParser.parse(CucumberPropertiesParser.java:40)
+at io.cucumber.testng.TestNGCucumberRunner.<init>(TestNGCucumberRunner.java:97)
+at io.cucumber.testng.AbstractTestNGCucumberTests.setUpClass(AbstractTestNGCucumberTests.java:27)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: io.cucumber.tagexpressions.TagExpressionException: Tag expression '(@ ThirdButtonTag and (not @MaleTag))' could not be parsed because of syntax error: expected operator
+at io.cucumber.tagexpressions.TagExpressionParser.check(TagExpressionParser.java:136)
+at io.cucumber.tagexpressions.TagExpressionParser.parse(TagExpressionParser.java:74)
+at io.cucumber.tagexpressions.TagExpressionParser.parse(TagExpressionParser.java:27)
+at java.base/java.util.function.Function.lambda$andThen$1(Function.java:88)
+at io.cucumber.core.options.CucumberPropertiesParser.parseAll(CucumberPropertiesParser.java:144)
+... 18 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.cucumber.core.exception.CucumberException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runners.MainRunner@27ce24aa]" started-at="2024-10-02T15:29:51 IDT" name="tearDownClass" finished-at="2024-10-02T15:29:51 IDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- runners.MainRunner -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

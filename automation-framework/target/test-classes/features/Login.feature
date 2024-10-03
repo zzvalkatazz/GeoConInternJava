@@ -1,4 +1,4 @@
-@LoginPage
+@LoginPage @PassedTests
 Feature: Testing Login page
 
   Background:
