@@ -1,0 +1,195 @@
+<mat-card class="breadcrumb">
+  <!--mat-card ima box shadow i border radius, za sega sum gi mahnal tuk gore za da ne se burkam 
+      ot kude idvat.-->
+  <geocon-breadcrumb #breadcrumb></geocon-breadcrumb>
+</mat-card>
+
+<!-- <input-test-container> </input-test-container> -->
+
+<div style="height: calc(100% - 36px); width: 100%">
+  <div class="row px-2 py-2" style="height: 250px">
+    <div class="col-6 h-100">
+      <a
+        class="selection primary"
+        [routerLink]="'/pages/dplan'"
+        [disableLink]="!planRights"
+        [class.disabled]="!planRights"
+      >
+        <div class="content">
+          <img src="assets/images/dplan.png" />
+          <p>{{ "text.791" | translate }}</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-3 h-100">
+      <a class="selection primary" routerLink="/pages/yearly-schedule">
+        <div class="content">
+          <img src="assets/images/yearly-schedules-overview.png" />
+          <p>{{ "text.1947" | translate }}</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-3 h-100">
+      <a
+        class="selection primary"
+        routerLink="/pages/annual-plan-of-absences"
+        [disableLink]="!annualAbsencePlanRights"
+        [class.disabled]="!annualAbsencePlanRights"
+      >
+        <div class="content">
+          <img src="assets/images/calendar_52.png" />
+          <p>{{ "text.6851" | translate }}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="row px-2 py-2" style="height: 150px">
+    <div class="col h-100">
+      <a
+        class="selection secondary"
+        routerLink="/pages/"
+        (click)="employeesFormClick()"
+        [class.disabled]="!employeesRights"
+        [style.pointer-events]="!employeesRights ? 'none' : ''"
+      >
+        <div class="content">
+          <img src="assets/images/employees48x48.png" />
+          <p>{{ "text.10302" | translate }}</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col h-100">
+      <a class="selection secondary" (click)="onStatisticsClick()">
+        <div class="content">
+          <img src="assets/images/statistics48x48.png" />
+          <p>{{ "text.405" | translate }}</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col h-100">
+      <a
+        class="selection secondary"
+        (click)="onHolidayPlanClick()"
+        [class.disabled]="!useHolidayPlan"
+        [style.pointer-events]="!useHolidayPlan ? 'none' : ''"
+      >
+        <div class="content">
+          <img src="assets/images/calendar.png" />
+          <p>{{ "text.75" | translate }}</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col h-100">
+      <a
+        class="selection secondary"
+        (click)="timeRecordingImportClick()"
+        [class.disabled]="!timeRecRights || !settingsService.license.HospIsChip"
+        [style.pointer-events]="
+          !timeRecRights || !settingsService.license.HospIsChip ? 'none' : ''
+        "
+      >
+        <div class="content">
+          <img src="assets/images/chipsys.png" />
+          <p>{{ "text.1000" | translate }}</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col h-100">
+      <a
+        class="selection secondary"
+        (click)="onOptionsClick()"
+        [class.disabled]="!optionsRights"
+        [style.pointer-events]="!optionsRights ? 'none' : ''"
+      >
+        <div class="content">
+          <img src="assets/images/preferences48x48.png" />
+          <p>{{ "text.1002" | translate }}</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col h-100">
+      <a
+        class="selection secondary"
+        (click)="onShiftsClick()"
+        [class.disabled]="!shiftsRights"
+        [style.pointer-events]="!shiftsRights ? 'none' : ''"
+      >
+        <div class="content">
+          <img src="assets/images/calendar_clock48x48.png" />
+          <p>{{ "text.982" | translate }}</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col h-100">
+      <a
+        class="selection secondary"
+        (click)="absencesOnClick()"
+        [class.disabled]="!absencesRights"
+        [style.pointer-events]="!absencesRights ? 'none' : ''"
+      >
+        <div class="content">
+          <img src="assets/images/absences48x48.png" />
+          <p>{{ "text.984" | translate }}</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col h-100">
+      <a
+        class="selection secondary"
+        (click)="dutiesOnClick()"
+        [class.disabled]="!dutiesRights"
+        [style.pointer-events]="!dutiesRights ? 'none' : ''"
+      >
+        <div class="content">
+          <img src="assets/images/duties48x48.png" />
+          <p>{{ "text.983" | translate }}</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- <div class="col h-100">
+      <a
+        class="selection secondary"
+        (click)="openGeneratePlan()"
+        [class.disabled]="!dutiesRights"
+        [style.pointer-events]="!dutiesRights ? 'none' : ''"
+      >
+        <div class="content">
+          <img src="assets/images/duties48x48.png" />
+          <p>{{ "GENERATE PLAN" | translate }}</p>
+        </div>
+      </a>
+    </div> -->
+  </div>
+
+  <!-- [class.mat-elevation-z2]="!isOver"
+    [class.mat-elevation-z8]="isOver"
+    (mouseover)="isOver = true"
+    (mouseleave)="isOver = false" -->
+  <button
+    color="primary"
+    class="btn menu-button info-button"
+    igxButton="fab"
+    (click)="clickChatDialog()"
+  >
+    @if (!openChatDialog) {
+    <igx-icon>expand_less</igx-icon>
+    } @if (openChatDialog) {
+    <igx-icon>expand_more</igx-icon>
+    }
+    <span>Info</span>
+  </button>
+  <geocon-test-component></geocon-test-component>
+</div>
+<!--  geocon-input-date -->
+

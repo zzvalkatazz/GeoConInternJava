@@ -1,0 +1,84 @@
+<div class="container-main">      
+  <div class="container-title">
+    <div class="paragraph">
+        
+    <p>Time -</p>
+    
+        <geocon-clock [timeControl]="timeControl"></geocon-clock>
+
+   </div>
+  </div>
+  <div class="container-post">
+    <div class="row">
+      <div class="offset-1 col-10">
+        <div class="row mt-3">
+          <div class="offset-1 col-10">
+            <geocon-input-text
+              [control]="body"
+              controlName="body"
+              [controlGroup]="form"
+              [label]="'Body'"
+              [displayDensity]="'compact'"
+            ></geocon-input-text>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="offset-1 col-10">
+            <geocon-input-text
+              [control]="id"
+              controlName="id"
+              [controlGroup]="form"
+              [label]="'Id'"
+              [displayDensity]="'compact'"
+            ></geocon-input-text>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="offset-1 col-10">
+            <geocon-input-text
+              [control]="title"
+              controlName="title"
+              [controlGroup]="form"
+              [label]="'Title'"
+              [displayDensity]="'compact'"
+            ></geocon-input-text>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="offset-1 col-10">
+            <geocon-input-text
+              [control]="userId"
+              controlName="userId"
+              [controlGroup]="form"
+              [label]="'User Id'"
+              [displayDensity]="'compact'"
+            ></geocon-input-text>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="offset-1 col-10 mt-3">
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-success btn-lg btn-square flex-fill"
+                (click)="clickFormButton()"
+              >
+                <span>Randomize</span>
+              </button>
+
+              <button
+                class="btn btn-danger btn-lg btn-square flex-fill ml-2"
+                (click)="createPost()"
+              >
+                <span>Submit</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

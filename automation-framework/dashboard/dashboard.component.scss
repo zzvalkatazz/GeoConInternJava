@@ -1,0 +1,102 @@
+@use "igniteui-angular/theming" as *;
+
+$color-secondary: var(--primary-color-14);
+$color-primary: var(--primary-color-15);
+$border-color-primary: var(--border-color-black-3);
+$border-color-secondary: var(--border-color-black-3);
+$color-hover: var(--complementary-color-4);
+
+.selection{
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.selection.disabled {
+    background-color: gray;
+}
+
+.selection:hover{
+    background-color: $color-hover;
+}
+
+.selection.disabled:hover{
+    background-color: gray;
+}
+
+.primary{
+    background-color: $color-primary;
+    box-shadow: 0 2px 5px 0 $border-color-primary;
+}
+.secondary{
+    background-color: $color-secondary;
+    box-shadow: 0 2px 5px 0 $border-color-secondary;
+}
+
+.selection .content{
+    max-height: 100%;
+    //border: solid yellow 2px;
+}
+
+.selection .content p{
+    color: white;
+    //height: 25%;
+    //border: solid red 1px;
+    margin: 0;
+}
+
+.primary .content img{
+    height: auto;
+    max-height: 75%;
+    max-width: 100%;
+    //width: 100%; //tova go chupi ot vsqkude
+    //border: solid red 1px;
+}
+
+.secondary .content img{
+    height: 48px;
+    width: 48px;
+    max-height: 75%;
+    max-width: 100%;
+    //width: 100%; //tova go chupi ot vsqkude
+    //border: solid red 1px;
+}
+
+.breadcrumb {
+    // height: 4%; 
+    width: 100%; 
+    padding: 0px; 
+    box-shadow: none; 
+    border-radius: 0px;
+}
+
+.menu-button {
+    position: fixed;
+    bottom: 0.5rem;
+    right: 1.5rem;
+}
+
+.menu-button__label {
+    line-height: 50px; 
+}
+
+$custom-button-theme: button-theme(
+    $foreground: var(--white-color),
+    $background: var(--primary-color-15),
+    $hover-background: var(--complementary-color-4),
+    $hover-foreground: var(--white-color),
+    $focus-background: var(--primary-color-15),
+    $focus-foreground: var(--white-color),
+    $active-background: var(--primary-color-15),
+    $active-foreground: var(--white-color),
+);
+
+
+:host ::ng-deep {
+    @include css-vars($custom-button-theme);
+}
